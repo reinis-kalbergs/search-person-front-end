@@ -1,0 +1,48 @@
+<section class="container">
+
+  <h3 class="person-title">Find person by personal ID and date of birth</h3>
+  <div class="input-field">
+    <label> Input personal id </label>
+    <input [(ngModel)]="personalIdInput" type="text"
+           class="form-control"
+           placeholder="for example: 6415-7575"/>
+    <label>Input date of birth</label>
+    <input class="form-control" placeholder="yyyy-mm-dd"
+           type="text"
+           [(ngModel)]="dateOfBirthInput"/>
+  </div>
+
+  <div class="search-btn-container">
+    <button class="search-btn" type="button" (click)="searchPerson()">Search</button>
+  </div>
+
+  <div *ngIf="person$ | async as person" class="table-container">
+    <h3 class="table-title">Person table:</h3>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Personal ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{ person.personalId }}</td>
+        <td>{{ person.firstName }}</td>
+        <td>{{ person.lastName }}</td>
+        <td> {{ person.gender }}</td>
+        <td>{{ person.dateOfBirth }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="personNotFound">
+    <h3 class="not-found">Person was not found</h3>
+  </div>
+</section>
+
+

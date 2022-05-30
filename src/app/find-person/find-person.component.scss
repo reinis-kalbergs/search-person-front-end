@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.not-found {
+  color: firebrick;
+}
+
+div.input-field {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 5px;
+}
+
+div.input-field label {
+  text-align: right;
+}
+
+div.input-field label:after {
+  content: ":";
+}
